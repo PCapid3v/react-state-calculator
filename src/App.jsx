@@ -5,7 +5,7 @@ import "./App.css"
 function App() {
   const [value, setValue] = useState(0)
   const [operator, setOperator] = useState("+")
-  const [value2 , setValue2] = useState (0)
+  const [secondValue , setsecondValue] = useState (0)
   const [total , setTotal] =useState (0)
  console.log(value)
  const handlenumber = (e) => {
@@ -13,30 +13,30 @@ function App() {
  }
 
  const clearCount1 = () => {
-  setValue("")
+  setsecondValue("")
  }
 
  const clearCount2 = () => {
-  setValue2("")
+  setsecondValue("")
  }
 
  const handlenumber2 = (e) => {
-  setValue2( e.target.value)
+  setsecondValue( e.target.value)
  }
 
  const answer = () => {
   switch (operator){
     case "+":
-      setTotal(Number(value) + Number(value2));
+      setTotal(Number(value) + Number(secondValue));
       break;
     case "-":
-      setTotal(Number(value) - Number(value2));
+      setTotal(Number(value) - Number(secondValue));
       break;
     case "*":
-      setTotal(Number(value) * Number(value2));
+      setTotal(Number(value) * Number(secondValue));
       break;
     case "÷":
-      setTotal(Number(value) / Number(value2));
+      setTotal(Number(value) / Number(secondValue));
       break;
 
   }
@@ -73,7 +73,7 @@ function App() {
       </div>
 
       <div className="panel">
-        <p>{value2}</p>
+        <p>{secondValue}</p>
         <div className="numbers">
         <button value={1} onClick={handlenumber2} >1</button>
           <button value={2} onClick={handlenumber2}>2</button>
